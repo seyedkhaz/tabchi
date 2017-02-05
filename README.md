@@ -4,7 +4,9 @@
 
 TG-CLI based broadcasting bot!
 
-##Install
+*******************************************
+
+  ##Install
 
 ```
 git clone https://github.com/sajjad-021/TabChi.git
@@ -13,28 +15,27 @@ chmod 777 install.sh
 ./install.sh
 ```
 
-******  
+* * *
  
-##Create a bot
+   ##Create a bot
 
 ```
 python3 creator.py
 ```        
 Enter Tabchi ID : 111
-Enter Full Sudo ID : 123456
-  
-   
+Enter Full Sudo ID : 123456    ---(you can see your account Id Number in [@UserInfoBot](https://telegram.me/userinfobot)])---
 Then
-
-./tabchi-111.sh
 ```
-*****
+screen ./tabchi-111.sh
+```
+
+* * * 
          
 ##Anti crash
 
-tmux new-session -s script "bash tabchi-111.sh"
+tmux new-session -s script "bash tabchi-111.sh -t"
 ```        
-*****    
+* * *    
 
 Enter id of tabchi in "ID" part (it can be anything but should be unique)
 
@@ -49,14 +50,14 @@ killall screen
 killall tmux
 ```
 
+#Stay Online
+     ##Important
+         ###Dont Forget
 
-#Important
-##Dont Forget
+after run bot, you must send messege from the bot in the [@TgMessengerBot](https://telegram.me/TgMessengerBot)
+This is for stay online your bot and dely result 
 
-after run, you must send messege of your bot too be [@sajjad_021](https://telegram.me/sajjad_021) for regester tour bot.
-if you are reported, you can send messege in the [@TgMessengerBot](https://telegram.me/TgMessengerBot) and requst for activate your bot.
-
-***
+* * *
 
 ##Run
    
