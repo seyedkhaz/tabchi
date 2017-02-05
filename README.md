@@ -4,7 +4,7 @@
 
 TG-CLI based broadcasting bot!
 
-*******************************************
+* * * * *
 
   ##Install
 
@@ -15,55 +15,55 @@ chmod 777 install.sh
 ./install.sh
 ```
 
-* * *
+***
  
    ##Create a bot
 
 ```
 python3 creator.py
-```        
+```         
+
 Enter Tabchi ID : 111
-Enter Full Sudo ID : 123456    ---(you can see your account Id Number in [@UserInfoBot](https://telegram.me/userinfobot)])---
+Enter id of tabchi in "ID" part (it can be anything but should be unique)
+
+Enter Full Sudo ID : 123456    
+Enter your telegram Id in "Full Sudo ID" part
+---(you can see your account Id Number in [@UserInfoBot](https://telegram.me/userinfobot)])---
+
 Then
+
 ```
 screen ./tabchi-111.sh
 ```
 
-* * * 
+*** 
          
-##Anti crash
+ ##Anti crash
 
+```
 tmux new-session -s script "bash tabchi-111.sh -t"
-```        
-* * *    
+```
 
-Enter id of tabchi in "ID" part (it can be anything but should be unique)
+***
 
-Enter your telegram Id in "Full Sudo ID" part
+  ##Stay Online
 
-Enjoy Your New Bot!
+after run bot, you must send messege from the bot in the [@TgMessengerBot](https://telegram.me/TgMessengerBot)
+This is for stay online your bot and dely result 
+
+***    
+
+   ##Run agin
 
 You can stop the script by pressing Control+C in the script session. Alternatively, you can tmux kill-session -t script or also killing all tmux processes killall tmux
 
 ```
 killall screen
 killall tmux
+tmux new-session -s script "bash tabchi-111.sh -t"
 ```
 
-#Stay Online
-     ##Important
-         ###Dont Forget
-
-after run bot, you must send messege from the bot in the [@TgMessengerBot](https://telegram.me/TgMessengerBot)
-This is for stay online your bot and dely result 
-
-* * *
-
-##Run
-   
-Use `./tabchi-ID.sh` to run your bot normaly or use `screen ./tabchi-ID.sh` for auto launch mode (put tabchi-id in ID part)
-
-##Help and more
+  ##Help and more
 
 /pm <userid> <text>
 ارسال <text> به <userid> بطور مارک داون
@@ -132,3 +132,4 @@ Use `./tabchi-ID.sh` to run your bot normaly or use `screen ./tabchi-ID.sh` for 
 
 ###Powered by [MemberPlus_TM](https://telegram.me/MemberPlus_TM)
 
+Enjoy Your New Bot!
