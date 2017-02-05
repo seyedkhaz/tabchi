@@ -4,9 +4,9 @@
 
 TG-CLI based broadcasting bot!
 
-* * * * *
+****
 
-  ##Install
+##Install
 
 ```
 git clone https://github.com/sajjad-021/TabChi.git
@@ -15,9 +15,9 @@ chmod 777 install.sh
 ./install.sh
 ```
 
-***
+*
  
-   ##Create a bot
+##Create a bot
 
 ```
 python3 creator.py
@@ -36,7 +36,7 @@ Then
 screen ./tabchi-111.sh
 ```
 
-* *  
+*
          
 ##Anti crash
 
@@ -44,14 +44,14 @@ screen ./tabchi-111.sh
 tmux new-session -s script "bash tabchi-111.sh -t"
 ```
 
-* *
+*
 
 ##Stay Online
 
 after run bot, you must send messege from the bot in the [@TgMessengerBot](https://telegram.me/TgMessengerBot)
 This is for stay online your bot and dely result 
 
-* *    
+*
 
 ##Run agin
 
@@ -62,6 +62,8 @@ killall screen
 killall tmux
 tmux new-session -s script "bash tabchi-111.sh -t"
 ```
+
+***
 
 ##Help and more
 
