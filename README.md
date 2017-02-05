@@ -1,4 +1,4 @@
-# [TabChi](https://telegram.me/MemberPlus_tm)
+# [TabChi v3.1](https://telegram.me/MemberPlus_tm)
 
 <p align="center"> ![http://member-adder.ir/img/member+.png](http://member-adder.ir/img/member+.png)
 
@@ -6,30 +6,34 @@ TG-CLI based broadcasting bot!
 
 ##Install
 
-       git clone https://github.com/sajjad-021/TabChi.git
-       cd TabChi
-       chmod 777 install.sh
-       ./install.sh
+```
+git clone https://github.com/sajjad-021/TabChi.git
+cd TabChi
+chmod 777 install.sh
+./install.sh
+```
 
 ******  
  
 ##Create a bot
-   
-        python3 creator.py
-        
+
+```
+python3 creator.py
+```        
 Enter Tabchi ID : 111
 Enter Full Sudo ID : 123456
   
    
 Then
-        ./tabchi-111.sh
 
+./tabchi-111.sh
+```
 *****
          
 ##Anti crash
 
-        tmux new-session -s script "bash tabchi-111.sh"
-        
+tmux new-session -s script "bash tabchi-111.sh"
+```        
 *****    
 
 Enter id of tabchi in "ID" part (it can be anything but should be unique)
