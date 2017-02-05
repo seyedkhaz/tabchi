@@ -1,5 +1,14 @@
 # [TabChi v3.1](https://telegram.me/MemberPlus_tm)
 
+https://img.shields.io/badge/license-AGPL-blue.svg
+[![https://telegram.me/sajjad_021](https://img.shields.io/badge/%F0%9F%92%AC_Telegram-sajjad_021-blue.svg)](https://t.me/sajjad_021)
+[![https://github.com/sajjad-021/TgGuard](https://img.shields.io/badge/%F0%9F%92%AC_GitHub-Tabchi-green.svg)](https://github.com/sajjad-021/Tabchi)
+[![https://member-adder.ir](https://img.shields.io/badge/%F0%9F%92%AC_WebPage-MemberPlus_TM-red.svg)](https://member-adder.ir)
+
+[![https://telegram.me/MemberPlus_TM](https://img.shields.io/badge/%F0%9F%92%AC_Telegram-MemberPlus_TM-blue.svg)](https://t.me/MemberPlus_TM)
+[![https://valtman.name/telegram-cli](https://img.shields.io/badge/%F0%9F%92%AC_WebPage-valtman.name-red.svg)](https://valtman.name/telegram-cli)
+[![https://github.com/vysheng](https://img.shields.io/badge/%F0%9F%92%AC_GitHub-vysheng-green.svg)](https://github.com/vysheng)
+
 <p align="center"> ![http://member-adder.ir/img/member+.png](http://member-adder.ir/img/member+.png)
 
 TG-CLI based broadcasting bot!
