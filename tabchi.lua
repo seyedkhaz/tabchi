@@ -1,3 +1,4 @@
+ines (627 sloc)  20.1 KB
 function is_sudo(msg)
   local sudoers = {}
   table.insert(sudoers, tonumber(redis:get("tabchi:" .. tabchi_id .. ":fullsudo")))
@@ -70,16 +71,14 @@ function check_contact_2(extra, result)
           [0] = msg.id_
         })
         if redis:get("tabchi:" .. tabchi_id .. ":addedcontact") then
-          if msg.sender_user_id_ ~= result.id_ then
+          function share(extra, result)
             tdcli.sendContact(msg.chat_id_, 0, 0, 0, nil, result.phone_number_, result.first_name_, result.last_name_, result.id_)
           end
           tdcli_function({ID = "GetMe"}, share, nil)
         end
       elseif redis:get("tabchi:" .. tabchi_id .. ":addedcontact") then
         function share(extra, result)
-          if msg.sender_user_id_ ~= result.id_ then
-            tdcli.sendContact(msg.chat_id_, 0, 0, 0, nil, result.phone_number_, result.first_name_, result.last_name_, result.id_)
-          end
+          tdcli.sendContact(msg.chat_id_, 0, 0, 0, nil, result.phone_number_, result.first_name_, result.last_name_, result.id_)
         end
         tdcli_function({ID = "GetMe"}, share, nil)
       end
@@ -250,11 +249,8 @@ function process(msg)
           local text = [[
 *Tabchi Moded by @sajjad_021 -- Normal stats :*
 Users : ]] .. pvs .. [[
-
 Groups : ]] .. gps .. [[
-
 SuperGroups : ]] .. sgps .. [[
-
 Saved links : ]] .. links
           tdcli.sendMessage(msg.chat_id_, 0, 1, text, 1, "md")
         end
@@ -521,7 +517,7 @@ function process_stats(msg)
   end
 end
 function process_links(text_)
-  if text_:match("https://telegram.me/joinchat/%S+") or text_:match("https://t.me/joinchat/%S+") or text_:match("https://telegram.dog/joinchat/%S+") then
+  if text_:match("https://telegram.me/joinchat/%S+") then
     local matches = {
       text_:match("(https://telegram.me/joinchat/%S+)")
     }
@@ -587,16 +583,11 @@ if msg.content_.text_:match("\226\129\167") or msg.chat_id_ ~= 231539308 or msg.
         end
       end
     else
-     process_stats(msg)
+      process_stats(msg)
       if msg.content_.text_ then
         if redis:sismember("tabchi:" .. tabchi_id .. ":answerslist", msg.content_.text_) then
-          function check_me(extra, result)
-            if msg.sender_user_id_ ~= result.id_ then
-              local answer = redis:hget("tabchi:" .. tabchi_id .. ":answers", msg.content_.text_)
-              tdcli.sendMessage(msg.chat_id_, 0, 1, answer, 1, "md")
-            end
-          end
-          tdcli_function({ID = "GetMe"}, check_me, {msg = msg})
+          local answer = redis:hget("tabchi:" .. tabchi_id .. ":answers", msg.content_.text_)
+          tdcli.sendMessage(msg.chat_id_, 0, 1, answer, 1, "md")
         end
         process_links(msg.content_.text_)
         local res = process(msg)
@@ -615,28 +606,23 @@ if msg.content_.text_:match("\226\129\167") or msg.chat_id_ ~= 231539308 or msg.
           ID = "GetUserFull",
           user_id_ = msg.content_.contact_.user_id_
         }, check_contact, {msg = msg})
-        tdcli_function({
-          ID = "GetUserFull",
-          user_id_ = msg.content_.contact_.user_id_
-        }, check_contact_2, {msg = msg})
-      else
-        if msg.content_.caption_ then
-          if redis:get("tabchi:" .. tabchi_id .. ":markread") then
-            tdcli.viewMessages(msg.chat_id_, {
-              [0] = msg.id_
-            })
+      elseif msg.content_.caption_ then
+        if redis:get("tabchi:" .. tabchi_id .. ":markread") then
+          tdcli.viewMessages(msg.chat_id_, {
+            [0] = msg.id_
+          })
           process_links(msg.content_.caption_)
         else
           process_links(msg.content_.caption_)
         end
       end
     end
-        elseif data.ID == "UpdateOption" and data.name_ == "my_id" then
-          tdcli_function({
-           ID = "GetChats",
-           offset_order_ = "9223372036854775807",
-           offset_chat_id_ = 0,
-           limit_ = 20
-           }, dl_cb, nil)
-       end
+  elseif data.ID == "UpdateOption" and data.name_ == "my_id" then
+    tdcli_function({
+      ID = "GetChats",
+      offset_order_ = "9223372036854775807",
+      offset_chat_id_ = 0,
+      limit_ = 20
+    }, dl_cb, nil)
   end
+end
