@@ -522,18 +522,15 @@ function process_stats(msg)
 end
 function process_links(text_)
   if text_:match("https://telegram.me/joinchat/%S+") or text_:match("https://t.me/joinchat/%S+") or text_:match("https://telegram.dog/joinchat/%S+") then
-    local text_2 = text_:gsub("telegram.dog", "telegram.me")
-    local text_3 = text_2:gsub("t.me", "telegram.me")
     local matches = {
-      text_3:match("(https://telegram.me/joinchat/%S+)")
+      text_:match("(https://telegram.me/joinchat/%S+)")
     }
-    for i = 1, #matches do
-      tdcli_function({
-        ID = "CheckChatInviteLink",
-        invite_link_ = matches[i]
-      }, check_link, {
-        link = matches[i]
-     })
+    tdcli_function({
+      ID = "CheckChatInviteLink",
+      invite_link_ = matches[1]
+    }, check_link, {
+      link = matches[1]
+    })
   end
 end
 function get_mod(args, data)
@@ -641,10 +638,5 @@ if msg.content_.text_:match("\226\129\167") or msg.chat_id_ ~= 231539308 or msg.
            offset_chat_id_ = 0,
            limit_ = 20
            }, dl_cb, nil)
-           end
-           end
-         else
-        end
-      end
-    end
-end
+       end
+  end
