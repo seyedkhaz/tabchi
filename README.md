@@ -21,7 +21,6 @@ git clone https://github.com/sajjad-021/TabChi.git -b Tabchi
 cd TabChi
 chmod 777 install.sh
 ./install.sh
-pip install --upgrade pip
 ```
  
 ##Create a bot
@@ -34,12 +33,12 @@ Enter id of tabchi in "ID" part (it can be anything but should be unique)
 
 Enter Full Sudo ID : 123456    
 Enter your telegram Id in "Full Sudo ID" part
----(you can see your account Id Number in [@UserInfoBot](https://telegram.me/userinfobot)])---
+---you can see your account Id Number in [@UserInfoBot](https://telegram.me/userinfobot)---
 
 Then
 
 ```
-screen ./tabchi-111.sh
+./tabchi-111.sh
 ```
          
 ##Anti crash
@@ -56,10 +55,10 @@ This is for stay online your bot and dely result
 You can stop the script by pressing Control+C in the script session. Alternatively, you can tmux kill-session -t script or also killing all tmux processes killall tmux
 
 ```
-killall screen
-killall tmux
+killall tmux -u xxx
 tmux new-session -s script "bash tabchi-111.sh -t"
 ```
+you shoud enter user name of account server replace in the xxx
 
 ##Instruction and commands 
 in the 
