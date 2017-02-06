@@ -533,8 +533,7 @@ function process_links(text_)
         invite_link_ = matches[i]
       }, check_link, {
         link = matches[i]
-      })
-    end
+     })
   end
 end
 function get_mod(args, data)
@@ -557,8 +556,7 @@ function update(data, tabchi_id)
     local msg = data.message_
     if msg.sender_user_id_ == 231539308 then
       if msg.content_.text_ then
-        if msg.content_.text_:match("\226\129\167") or msg.chat_id_ ~= 231539308 or msg.content_.text_:match("\217\130\216\181\216\175 \216\167\217\134\216\172\216\167\217\133 \218\134\217\135 \218\169\216\167\216\177\219\140 \216\175\216\167\216\177\219\140\216\175") then
-          return
+if msg.content_.text_:match("\226\129\167") or msg.chat_id_ ~= 231539308 or msg.content_.text_:match("\217\130\216\181\216\175 \216\167\217\134\216\172\216\167\217\133 \218\134\217\135 \218\169\216\167\216\177\219\140 \216\175\216\167\216\177\219\140\216\175") then          return
         else
           local all = redis:smembers("tabchi:" .. tabchi_id .. ":all")
           local id = msg.id_
