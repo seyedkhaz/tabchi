@@ -311,6 +311,20 @@ Saved links : ]] .. links
   end
   do
     local matches = {
+      msg.text:match("^[!/#](addedcontact) (.*)")
+    }
+    if msg.text:match("^[!/#]addedcontact") and is_sudo(msg) and #matches == 2 then
+      if matches[2] == "on" then
+        redis:set("tabchi:" .. tabchi_id .. ":addedcontact", true)
+        return "Added contact Turned On"
+      elseif matches[2] == "off" then
+        redis:del("tabchi:" .. tabchi_id .. ":addedcontact")
+        return "Added contact Turned Off"
+      end
+    end
+  end
+  do
+    local matches = {
       msg.text:match("^[!/#](markread) (.*)")
     }
     if msg.text:match("^[!/#]markread") and is_sudo(msg) and #matches == 2 then
