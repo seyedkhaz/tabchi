@@ -57,35 +57,6 @@ Bia pv]]) .. "", 1, "md")
     end
   end
 end
-function check_contact_2(extra, result)
-  if not result.phone_number_ then
-    do
-      local msg = extra.msg
-      local first_name = "" .. (msg.content_.contact_.first_name_ or "-") .. ""
-      local last_name = "" .. (msg.content_.contact_.last_name_ or "-") .. ""
-      local phone_number = msg.content_.contact_.phone_number_
-      local user_id = msg.content_.contact_.user_id_
-      tdcli.add_contact(phone_number, first_name, last_name, user_id)
-      if redis:get("tabchi:" .. tabchi_id .. ":markread") then
-        tdcli.viewMessages(msg.chat_id_, {
-          [0] = msg.id_
-        })
-        if redis:get("tabchi:" .. tabchi_id .. ":addedcontact") then
-          function share(extra, result)
-            tdcli.sendContact(msg.chat_id_, 0, 0, 0, nil, result.phone_number_, result.first_name_, result.last_name_, result.id_)
-          end
-          tdcli_function({ID = "GetMe"}, share, nil)
-        end
-      elseif redis:get("tabchi:" .. tabchi_id .. ":addedcontact") then
-        function share(extra, result)
-          tdcli.sendContact(msg.chat_id_, 0, 0, 0, nil, result.phone_number_, result.first_name_, result.last_name_, result.id_)
-        end
-        tdcli_function({ID = "GetMe"}, share, nil)
-      end
-    end
-  else
-  end
-end
 function check_link(extra, result, success)
   if result.is_group_ or result.is_supergroup_channel_ then
     tdcli.importChatInviteLink(extra.link)
