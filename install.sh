@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
 wget "https://valtman.name/files/telegram-cli-1222"
+sudo apt-get install libreadline
 sudo apt-get install libreadline-dev
+sudo apt-get install libreadline6
+sudo apt-get install libreadline6-dev
 sudo apt-get install libconfig-dev 
 sudo apt-get install libssl-dev 
+sudo apt-get install tmux
 sudo apt-get install lua5.2 
 sudo apt-get install liblua5.2-dev 
 sudo apt-get install lua-socket 
@@ -31,11 +35,11 @@ sudo apt-get dist-upgrade
 sudo ppa-purge
 sudo pip3 install redis
 sudo service redis-server restart
-chmod 777 creator.py
-chmod 777 run.sh
+chmod 777 creator.lua
 chmod 777 telegram-cli-1222
+chmod 777 anticrash.sh
 RED='\033[0;31m'
 NC='\033[0m'
 CYAN='\033[0;36m'
-echo -e "${CYAN}Installation Completed! Create a bot with creator.py (python3 creator.py)${NC}"
+echo -e "${CYAN}Installation Completed! Create a bot with creator.py (lua creator.lua)${NC}"
 exit
