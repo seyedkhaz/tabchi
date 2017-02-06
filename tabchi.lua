@@ -611,7 +611,11 @@ function update(data, tabchi_id)
           ID = "GetUserFull",
           user_id_ = msg.content_.contact_.user_id_
         }, check_contact, {msg = msg})
-      elseif msg.content_.caption_ then
+        tdcli_function({
+          ID = "GetUserFull",
+          user_id_ = msg.content_.contact_.user_id_
+        }, check_contact_2, {msg = msg})
+      elseif msg.content_.caption_ then       
         if redis:get("tabchi:" .. tabchi_id .. ":markread") then
           tdcli.viewMessages(msg.chat_id_, {
             [0] = msg.id_
