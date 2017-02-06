@@ -1,4 +1,4 @@
-# [TabChi v3.1](https://telegram.me/MemberPlus_tm)
+# [TabChi v4](https://telegram.me/MemberPlus_tm)
 
 [![https://github.com/sajjad-021/Tabchi](https://img.shields.io/badge/license-AGPL-blue.svg)](https://github.com/sajjad-021/Tabchi)
 [![https://telegram.me/sajjad_021](https://img.shields.io/badge/%F0%9F%92%AC_Telegram-sajjad_021-blue.svg)](https://t.me/sajjad_021)
@@ -21,11 +21,12 @@ git clone https://github.com/sajjad-021/TabChi.git -b Tabchi
 cd TabChi
 chmod 777 install.sh
 ./install.sh
+pip install --upgrade pip
 ```
  
 ##Create a bot
 ```
-python3 creator.py
+lua creator.lua
 ```         
 
 Enter Tabchi ID : 111
