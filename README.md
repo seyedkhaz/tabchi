@@ -17,7 +17,7 @@ TG-CLI based broadcasting bot!
 
 ##Install
 ```
-git clone https://github.com/sajjad-021/TabChi.git
+git clone https://github.com/sajjad-021/TabChi.git -b Tabchi
 cd TabChi
 chmod 777 install.sh
 ./install.sh
