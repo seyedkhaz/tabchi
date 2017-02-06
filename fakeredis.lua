@@ -403,6 +403,20 @@ local incr = function(self, k)
   return incrby(self, k, 1)
 end
 
+incrby = function(self, k, n)
+  k, n = chkarg(k), toint(n)
+  assert(n, "ERR value is not an integer or out of range")
+  local x = xgetw(self, k, "string")
+  local i = toint(x[1] or 0)
+  assert(i, "ERR value is not an integer or out of range")
+  i = i+n
+  assert(
+    (not overflows(i)),
+    "ERR increment or decrement would overflow"
+  )
+  x[1] = tostr(i)
+  return i
+end
 
 local incrbyfloat = function(self, k, n)
   k, n = chkarg(k), tofloat(n)
