@@ -636,12 +636,17 @@ function update(data, tabchi_id)
         end
       end
     end
-  elseif data.ID == "UpdateOption" and data.name_ == "my_id" then
-    tdcli_function({
-      ID = "GetChats",
-      offset_order_ = "9223372036854775807",
-      offset_chat_id_ = 0,
-      limit_ = 20
-    }, dl_cb, nil)
-  end
+        elseif data.ID == "UpdateOption" and data.name_ == "my_id" then
+          tdcli_function({
+           ID = "GetChats",
+           offset_order_ = "9223372036854775807",
+           offset_chat_id_ = 0,
+           limit_ = 20
+           }, dl_cb, nil)
+           end
+           end
+         else
+        end
+      end
+    end
 end
