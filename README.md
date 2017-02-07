@@ -3,7 +3,7 @@
 [![https://github.com/sajjad-021/Tabchi](https://img.shields.io/badge/license-AGPL-blue.svg)](https://github.com/sajjad-021/Tabchi)
 [![https://t.me/sajjad_021](https://img.shields.io/badge/%F0%9F%92%AC_Telegram-sajjad_021-blue.svg)](https://t.me/sajjad_021)
 [![https://github.com/sajjad-021/Tabchi](https://img.shields.io/badge/%F0%9F%92%AC_GitHub-Tabchi-green.svg)](https://github.com/sajjad-021/Tabchi)
-[![https://member-adder.ir](https://img.shields.io/badge/%F0%9F%92%AC_WebPage-MemberPlus_TM-red.svg)](https://member-adder.ir)
+[![https://tgmember.cf](https://img.shields.io/badge/%F0%9F%92%AC_WebPage-tgMember-red.svg)]
 
 [![https://t.me/MemberPlus_TM](https://img.shields.io/badge/%F0%9F%92%AC_Telegram-MemberPlus_TM-blue.svg)](https://t.me/MemberPlus_TM)
 [![https://valtman.name/telegram-cli](https://img.shields.io/badge/%F0%9F%92%AC_WebPage-valtman.name-red.svg)](https://valtman.name/telegram-cli)
@@ -72,6 +72,6 @@ in the
 ###[open by (sajjad_021)](https://t.me/sajjad_021)
 ###[channel (MemberPlus_TM)](https://t.me/MemberPlus_TM)
 
-Powered by [هTeam](https://telegram.me/iTeam_IR)
+#Powered by [iTeam](https://telegram.me/iTeam_IR)
 
 Enjoy Your New Bot!
