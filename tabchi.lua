@@ -216,7 +216,7 @@ function process(msg)
     }
     if msg.text:match("^[!/#]block") and is_sudo(msg) and #matches == 2 then
       tdcli.blockUser(tonumber(matches[2]))
-      return "User blocked"
+      return "User blocked *open by @MemberPlus_TM*"
     end
   end
   do
@@ -225,9 +225,51 @@ function process(msg)
     }
     if msg.text:match("^[!/#]unblock") and is_sudo(msg) and #matches == 2 then
       tdcli.unblockUser(tonumber(matches[2]))
-      return "User unblocked"
+      return "User unblocked  *open by @MemberPlus_TM*"
     end
   end
+	if msg.text:match("^[!/#]help$") and is_sudo(msg) then
+    local text = [[
+#راهنما
+*/block (id)*
+_بلاک کردن از خصوصي ربات_
+*/unblock (id)*
+_آن بلاک کردن از خصوصي ربات_
+*/panel*
+_پنل مديريت ربات_
+*/addsudo (id)*
+_اضافه کردن به سودوهاي  ربات_
+*/remsudo (id)*
+_حذف از ليست سودوهاي ربات_
+*/bc (text)*
+_ارسال پيام به همه_
+*/fwd {all/gps/sgps/users}* (by reply)
+_فوروارد پيام به همه/گروه ها/سوپر گروه ها/کاربران_
+*/echo (text)*
+_تکرار متن_
+*/addedmsg (on/off)*
+_تعیین روشن یا خاموش بودن پاسخ برای شر شن مخاطب_
+*/setaddedmsg (text)*
+_تعيين متن اد شدن مخاطب_
+*/markread (on/off)*
+_روشن يا خاموش کردن بازديد پيام ها_
+*/setanswer 'text' answer*
+_ تنظيم به عنوان جواب اتوماتيک_
+*/delanswer (answer)*
+_حذف جواب مربوط به_
+*/answers*
+_ليست جواب هاي اتوماتيک_
+*/addmembers*
+_اضافه کردن مخاطبين ربات به گروه_
+*/exportlinks*
+_دريافت لينک هاي ذخيره شده توسط ربات_
+*/contactlist*
+_دريافت مخاطبان ذخيره شده توسط ربات_
+*Join* _us_ >> @MemberPlus_TM
+]]
+    return text
+  end
+do
   if msg.text:match("^[!/#]panel$") and is_sudo(msg) then
     do
       local gps = redis:scard("tabchi:" .. tabchi_id .. ":groups")
@@ -248,7 +290,7 @@ function process(msg)
           }, dl_cb, nil)
         else
           local text = [[
-*Normal stats :*
+*Tabchi Moded by @sajjad_021 -- Normal stats  :*
 Users : ]] .. pvs .. [[
 
 Groups : ]] .. gps .. [[
@@ -302,10 +344,10 @@ Saved links : ]] .. links
     if msg.text:match("^[!/#]addedmsg") and is_sudo(msg) and #matches == 2 then
       if matches[2] == "on" then
         redis:set("tabchi:" .. tabchi_id .. ":addedmsg", true)
-        return "Added Message Turned On"
+        return "Added Message Turned On  *Tabchi Moded by @sajjad_021*"
       elseif matches[2] == "off" then
         redis:del("tabchi:" .. tabchi_id .. ":addedmsg")
-        return "Added Message Turned Off"
+        return "Added Message Turned Off   *cracked by @MemberPlus_TM*"
       end
     end
   end
@@ -330,10 +372,10 @@ Saved links : ]] .. links
     if msg.text:match("^[!/#]markread") and is_sudo(msg) and #matches == 2 then
       if matches[2] == "on" then
         redis:set("tabchi:" .. tabchi_id .. ":markread", true)
-        return "Markread Turned On"
+        return "Markread Turned On  *cracked by @MemberPlus_TM*"
       elseif matches[2] == "off" then
         redis:del("tabchi:" .. tabchi_id .. ":markread")
-        return "Markread Turned Off"
+        return "Markread Turned Off  *Tabchi open by @sajjad_021*"
       end
     end
   end
@@ -435,7 +477,7 @@ Message :
         from_background_ = 1
       }, dl_cb, nil)
     end
-    return "Sent!"
+    return "Sent!  *Tabchi Moded by @sajjad_021*"
   end
   if msg.text:match("^[!/#]addtoall") and msg.reply_to_message_id_ and is_sudo(msg) then
     tdcli_function({
