@@ -1,7 +1,7 @@
 # [TabChi v4](https://t.me/MemberPlus_tm)
 
 [![https://github.com/sajjad-021/Tabchi](https://img.shields.io/badge/license-AGPL-blue.svg)](https://github.com/sajjad-021/Tabchi)
-[![http://t.me/sajjad_021](https://img.shields.io/badge/%F0%9F%92%AC_Telegram-sajjad_021-blue.svg)](http://t.me/sajjad_021)
+[![http://t.me/sajjad_021](https://img.shields.io/badge/Telegram-sajjad__021-blue.svg)](http://t.me/sajjad_021)
 [![https://github.com/sajjad-021/Tabchi](https://img.shields.io/badge/%F0%9F%92%AC_GitHub-Tabchi-green.svg)](https://github.com/sajjad-021/Tabchi)
 [![https://tgmember.cf](https://img.shields.io/badge/%F0%9F%92%AC_WebPage-tgMember-red.svg)]
 
