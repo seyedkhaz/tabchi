@@ -563,9 +563,9 @@ function process_stats(msg)
   end
 end
 function process_links(text_)
-  if text_:match("https://telegram.me/joinchat/%S+") or text_:match("https://t.me/joinchat/%S+") then
-	local matches = {
-	text_:match("(https://telegram.me/joinchat/%S+)") or text_:match("(https://t.me/joinchat/%S+)")
+  if text_:match("https://t.me/joinchat/%S+") or text_:match("https://telegram.me/joinchat/%S+") then
+    local matches = {
+      text_:match("(https://t.me/joinchat/%S+)") or text_:match("(https://telegram.me/joinchat/%S+)")
     }
     tdcli_function({
       ID = "CheckChatInviteLink",
