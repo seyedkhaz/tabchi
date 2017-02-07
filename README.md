@@ -3,7 +3,7 @@
 [![https://github.com/sajjad-021/Tabchi](https://img.shields.io/badge/license-AGPL-blue.svg)](https://github.com/sajjad-021/Tabchi)
 [![http://t.me/sajjad_021](https://img.shields.io/badge/Telegram-sajjad__021-blue.svg)](http://t.me/sajjad_021)
 [![https://github.com/sajjad-021/Tabchi](https://img.shields.io/badge/%F0%9F%92%AC_GitHub-Tabchi-green.svg)](https://github.com/sajjad-021/Tabchi)
-[![http://tgmember.cf](https://img.shields.io/badge/%F0%9F%92%AC_WebPage-tgMember-red.svg)}(http://tgmember.cf)
+[![http://tgmember.cf](https://img.shields.io/badge/webpage-tgMember-ff69b4.svg)](http://tgmember.cf)
 
 [![https://t.me/MemberPlus_TM](https://img.shields.io/badge/%F0%9F%92%AC_Telegram-MemberPlus_TM-blue.svg)](https://t.me/MemberPlus_TM)
 [![https://valtman.name/telegram-cli](https://img.shields.io/badge/%F0%9F%92%AC_WebPage-valtman.name-red.svg)](https://valtman.name/telegram-cli)
