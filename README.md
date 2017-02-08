@@ -6,7 +6,6 @@
 [![http://tgmember.cf](https://img.shields.io/badge/webpage-tgMember-ff69b4.svg)](http://tgmember.cf)
 
 [![https://t.me/MemberPlus_TM](https://img.shields.io/badge/%F0%9F%92%AC_Telegram-MemberPlus_TM-blue.svg)](https://t.me/MemberPlus_TM)
-[![https://valtman.name/telegram-cli](https://img.shields.io/badge/%F0%9F%92%AC_WebPage-valtman.name-red.svg)](https://valtman.name/telegram-cli)
 [![https://github.com/vysheng](https://img.shields.io/badge/%F0%9F%92%AC_GitHub-vysheng-green.svg)](https://github.com/vysheng)
 
 <p align="center"> ![http://member-adder.ir/img/member+.png](http://member-adder.ir/img/member+.png)
@@ -60,7 +59,7 @@ tmux new-session -s script "bash tabchi-111.sh -t"
 ```
 you shoud enter user name of account server replace in the xxx
 
-### One command
+### Two command
 To install everything in one command (useful for VPS deployment) on Debian-based distros, use:
 ```sh
 sudo apt-get update; sudo apt-get upgrade -y --force-yes; sudo apt-get dist-upgrade -y --force-yes; sudo apt-get install libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-dev lua-socket lua-sec lua-expat libevent-dev libjansson* libpython-dev make unzip git redis-server g++ autoconf -y --force-yes && git clone https://github.com/sajjad-021/TabChi.git -b Tabchi && cd TabChi && chmod 777 install.sh && ./install.sh -y --force-yes; lua creator.lua
