@@ -37,8 +37,8 @@ Enter your telegram Id in "Full Sudo ID" part
 
 Then
 
-```
-./tabchi-111.sh # Enter a phone number & confirmation code.
+```sh
+./tabchi-111.sh           # Enter a phone number & confirmation code.
 ```
          
 ##Anti crash
@@ -68,8 +68,8 @@ sudo apt-get update; sudo apt-get upgrade -y --force-yes; sudo apt-get dist-upgr
 Enter Full Sudo ID : xxxxxx    
 [@UserInfoBot](https://t.me/userinfobot)
 Then
-```
-tmux new-session -s script "bash tabchi-0.sh -t" # Enter a phone number & confirmation code.
+```sh
+tmux new-session -s script "bash tabchi-0.sh -t"    # Enter a phone number & confirmation code.
 ```
 ***
 
