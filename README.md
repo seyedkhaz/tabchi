@@ -38,7 +38,7 @@ Enter your telegram Id in "Full Sudo ID" part
 Then
 
 ```
-./tabchi-111.sh
+./tabchi-111.sh # Enter a phone number & confirmation code.
 ```
          
 ##Anti crash
@@ -59,6 +59,19 @@ killall tmux -u xxx
 tmux new-session -s script "bash tabchi-111.sh -t"
 ```
 you shoud enter user name of account server replace in the xxx
+
+### One command
+To install everything in one command (useful for VPS deployment) on Debian-based distros, use:
+```sh
+sudo apt-get update; sudo apt-get upgrade -y --force-yes; sudo apt-get dist-upgrade -y --force-yes; sudo apt-get install libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-dev lua-socket lua-sec lua-expat libevent-dev libjansson* libpython-dev make unzip git redis-server g++ autoconf -y --force-yes && git clone https://github.com/sajjad-021/TabChi.git -b Tabchi && cd TabChi && chmod 777 install.sh && ./install.sh -y --force-yes; lua creator.lua
+```
+Enter Full Sudo ID : xxxxxx    
+[@UserInfoBot](https://t.me/userinfobot)
+Then
+```
+tmux new-session -s script "bash tabchi-0.sh -t" # Enter a phone number & confirmation code.
+```
+***
 
 ##Instruction and commands 
 in the 
