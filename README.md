@@ -25,10 +25,7 @@ chmod 777 install.sh
 ##Create a bot
 ```
 lua creator.lua
-```         
-
-Enter Tabchi ID : 111
-Enter id of tabchi in "ID" part (it can be anything but should be unique)
+```        
 
 Enter Full Sudo ID : 123456    
 Enter your telegram Id in "Full Sudo ID" part
@@ -36,13 +33,9 @@ Enter your telegram Id in "Full Sudo ID" part
 
 Then
 
-```sh
-./tabchi-111.sh           # Enter a phone number & confirmation code.
-```
-         
 ##Anti crash
 ```
-tmux new-session -s script "bash tabchi-111.sh -t"
+tmux new-session -s script "bash tabchi-0.sh -t"
 ```
 
 ##Stay Online
@@ -55,7 +48,7 @@ You can stop the script by pressing Control+C in the script session. Alternative
 
 ```
 killall tmux -u xxx
-tmux new-session -s script "bash tabchi-111.sh -t"
+tmux new-session -s script "bash tabchi-0.sh -t"
 ```
 you shoud enter user name of account server replace in the xxx
 
@@ -81,9 +74,9 @@ in the
 ##Developers
 
 
-###[open by (sajjad_021)](https://t.me/sajjad_021)
-###[channel (MemberPlus_TM)](https://t.me/MemberPlus_TM)
+##[open by (sajjad_021)](https://t.me/sajjad_021)
+##[channel (MemberPlus_TM)](https://t.me/MemberPlus_TM)
 
-#Powered by [iTeam](https://telegram.me/iTeam_IR)
+###Powered by [iTeam](https://telegram.me/iTeam_IR)
 
 Enjoy Your New Bot!
