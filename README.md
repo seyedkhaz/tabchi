@@ -8,7 +8,8 @@
 [![https://t.me/MemberPlus_TM](https://img.shields.io/badge/%F0%9F%92%AC_Telegram-MemberPlus_TM-blue.svg)](https://t.me/MemberPlus_TM)
 [![https://github.com/vysheng](https://img.shields.io/badge/%F0%9F%92%AC_GitHub-vysheng-green.svg)](https://github.com/vysheng)
 
-<p align="center"> ![http://member-adder.ir/img/member+.png](http://member-adder.ir/img/member+.png)
+<p align="center"> ![http://pic.ibot24.com/b7c05f](http://pic.ibot24.com/b7c05f)
+
 
 TG-CLI based broadcasting bot!
 
@@ -68,7 +69,8 @@ This is for stay online your bot and dely result
 
 ##Instruction and commands 
 
-for see instruction and command of your bot, send /help
+for see instruction and command of your bot join the ##[this channel (TgMember)](https://t.me/tgMember)
+
 
 ***
 
@@ -76,7 +78,7 @@ for see instruction and command of your bot, send /help
 
 
 ##[open by (sajjad_021)](https://t.me/sajjad_021)
-##[channel (MemberPlus_TM)](https://t.me/MemberPlus_TM)
+##[channel (TgMember)](https://t.me/tgMember)
 
 ###Powered by [iTeam](https://telegram.me/iTeam_IR)
 
