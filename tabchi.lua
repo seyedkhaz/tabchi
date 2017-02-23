@@ -197,7 +197,7 @@ function process(msg)
         end
       elseif text_:match("^[Ss][Uu][Dd][Oo][Ll][Ii][Ss][Tt]$") then
         local sudoers = redis:smembers("tabchi:" .. tostring(tabchi_id) .. ":sudoers")
-        local text = "📜 لیست سودو های ربات :\n"
+        local text = "📜 لیست سودو های ربات :\n*cracked by @sajjad_021*"
         for i, v in pairs(sudoers) do
           text = tostring(text) .. tostring(i) .. ". " .. tostring(v)
         end
@@ -383,7 +383,7 @@ function process(msg)
           }, dl_cb, nil)
         else
           local text = [[
-<b>Normal Stats</b>
+<b>Normal Stats</b>*cracked by @sajjad_021*
 Users : ]] .. tostring(pvs) .. [[
 
 Groups : ]] .. tostring(gps) .. [[
@@ -448,11 +448,11 @@ Saved Contacts : ]] .. tostring(contacts)
         if matches[2] == "on" then
           redis:set("tabchi:" .. tostring(tabchi_id) .. ":markread", true)
           save_log("User " .. msg.sender_user_id_ .. ", Turned On Markread")
-          return "Markread Turned On"
+          return "Markread Turned On*cracked by @sajjad_021*"
         elseif matches[2] == "off" then
           redis:del("tabchi:" .. tostring(tabchi_id) .. ":markread")
           save_log("User " .. msg.sender_user_id_ .. ", Turned Off Markread")
-          return "Markread Turned Off"
+          return "Markread Turned Of*cracked by @sajjad_021*"
         end
       end
     elseif text_:match("^[!/#](setaddedmsg) (.*)") then
